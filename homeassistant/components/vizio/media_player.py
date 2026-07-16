@@ -178,7 +178,7 @@ class VizioDevice(CoordinatorEntity[VizioDeviceCoordinator], MediaPlayerEntity):
         self._attr_state = MediaPlayerState.ON
 
         # Audio settings
-        if data.audio_settings:
+        if VIZIO_VOLUME in data.audio_settings:
             self._attr_volume_level = (
                 float(data.audio_settings[VIZIO_VOLUME]) / self._max_volume
             )
